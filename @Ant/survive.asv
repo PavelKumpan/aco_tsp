@@ -1,0 +1,5 @@
+function this = survive(this)
+    this.alive = floor(rand(1) * 0.7 + exp(this.age^(0.623))*10^-5);
+    
+end
+

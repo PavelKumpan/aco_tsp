@@ -1,0 +1,8 @@
+function [ output_args ] = plotGui( graph, )
+
+plotGuiGraph(graph);
+plotGuiRoute(graph, bestRoute);
+
+
+end
+

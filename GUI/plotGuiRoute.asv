@@ -1,0 +1,29 @@
+function plotGuiRoute( graph, route )
+
+% fce vykresluje grafickou reprezentaci grafu na kreslící plochu v gui
+
+global inputPoints;
+global fig;
+
+matrix = getMatrix(graph);
+
+[m,n,o] = size(matrix);
+
+% zvýraznìné hrany
+for(i = 2:length(route))
+    x1 = inputPoints(i, 1);
+    y1 = inputPoints(i, 2);
+    x2 = inputPoints(i-1, 1);
+    y2 = inputPoints(i-1, 2);
+    plot(fig, [x1 x2], [y1 y2], 'r');
+end;
+
+    x1 = inputPoints(length(route), 1);
+    y1 = inputPoints(length(route), 2);
+    x2 = inputPoints(1, 1);
+    y2 = inputPoints(1, 2);
+    plot(fig, [x1 x2], [y1 y2], 'r');
+
+
+end
+

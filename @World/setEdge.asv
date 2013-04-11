@@ -1,0 +1,5 @@
+function this = setEdge(this, x, y, weight)
+    this.matrix(x, y) = weight;
+    this.matrix(y, x) = weight;
+end;
+

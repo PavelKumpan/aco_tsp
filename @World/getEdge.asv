@@ -1,0 +1,4 @@
+function weight = getEdge(this, x, y)
+    weight = this.matrix(x,y,1);
+end
+

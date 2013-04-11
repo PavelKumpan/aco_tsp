@@ -1,0 +1,10 @@
+function path = getStrongestPath(this, start, finish)
+%GETSTRONGESTPATH Summary of this function goes here
+%   Detailed explanation goes here
+    path(1) = start;
+    k = 1;
+    while(fin ~= finish && k < 1000)
+        paths(k) = 
+    end;
+end
+

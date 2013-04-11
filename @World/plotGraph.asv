@@ -1,0 +1,43 @@
+function plotGraph(this)
+% fce vykresluje grafickou reprezentaci grafu
+
+[m,n,o] = size(this.matrix);
+step  = 10;
+x = 0;
+y = 0 ;
+
+% vrcholy
+for(i = 1:m)
+    
+    if(mod(i,3) ~= 0)
+        x = x + step;
+    end;
+    
+    y = y + step;
+    
+    if(mod(i,3) == 0)
+        y = 0;
+    end;
+    
+    plot(x, y, 'bo');
+    text(x + 1, y, int2str(i), 'Color', 'k');
+end;
+
+% hrany
+for(i = 1:m)
+    for(j = i:n)
+        if(this.matrix(i,j,1) > 0)
+            x1 = i * step -  floor(i/3) * step;
+            x2 = j * step -  floor(j/3) * step;
+            y1 = mod(i, 3) * step;
+            y2 = mod(j, 3) * step;
+            plot([x1 x2], [y1 y2], 'Color',[0.25 0.25 0.25]);
+        end;
+    end;
+end;
+
+
+AXIS([0 x+10 -10 30]);
+
+end
+

@@ -1,0 +1,56 @@
+function plotGuiGraph(this)
+% fce vykresluje grafickou reprezentaci grafu na kreslící plochu v gui
+
+global inputPoints;
+
+[m,n,o] = size(this.matrix);
+step    = 10;
+x       = 0;
+y       = 0;
+p       = 1/5;  % parametr pro sjednocení feromonù pro vykreslení
+% hrany
+
+maxPhe = max(max(this.matrix(:,:,2).^p));
+
+for(i = 1:m)
+    for(j = i:n)
+        if(this.matrix(i,j,1) > 0)
+            x1 = inputPoints(i, 1);
+            y1 = inputPoints(i, 2);
+            x2 = inputPoints
+            
+            y2 = inputPoints
+            
+            color = (1 - this.matrix(i,j,2)^p / maxPhe) .* [1, 1, 1]; 
+           
+            color(isnan(color)) = 1;
+            
+            plot([x1 x2], [y1 y2], 'Color', color)
+        end;
+    end;
+end;
+
+% vrcholy
+% for(i = 1:m)
+%     
+%     if(mod(i,3) ~= 0)
+%         x = x + step;
+%     end;
+%     
+%     y = y + step;
+%     
+%     if(mod(i,3) == 0)
+%         y = 0;
+%     end;
+%     
+%     plot(x, y, 'bo');
+%     text(x + 1, y, int2str(i), 'Color', 'k');
+% end;
+
+
+
+
+AXIS([0 x+10 -10 30]);
+
+end
+

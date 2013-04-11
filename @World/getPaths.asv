@@ -1,0 +1,4 @@
+function paths = getPaths(this, node)
+    this.ma
+end
+

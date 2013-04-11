@@ -1,0 +1,28 @@
+function  this = go(this, paths)
+% funkce na základì vektoru cest vybere cestu s
+% nejsilnìjší feromonovou stopou a vrátí její index,
+% nastaví uzel na další
+
+% pøidáme náhodnou velièinu, hladinu feromonù zvedeneme o náhodné èíslo
+% <0 ; max() / 2>
+    p = 0.7; % konstanta náhodnosti;
+    routeL = length(this.route);
+    paths = paths + rand(size(paths)) * p *
+    if(routeL > 1)
+        prevNode = this.route(routeL-1);
+    else
+        prevNode = 0;
+    end;
+    
+    [c,i] = max(paths(:));
+    this.node = i; % nastavení nového uzlu
+    paths(i) = 0;
+    while(this.node == prevNode)
+        [c,i] = max(paths(:));
+        this.node = i; % nastavení nového uzlu
+        paths(i) = 0;
+    end;
+    
+    this.route(routeL + 1) = this.node; % pøidání dalšího uzlu do prošlé trasy
+end
+
